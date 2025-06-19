@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mhd. Abidin Abbas Lubis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --darker: #1a1a2e;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --text-light: #f8f9fa;
+            --text-dark: #212529;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary: #4895ef;
+            --primary-light: #4cc9f0;
+            --secondary: #4361ee;
+            --accent: #f72585;
+            --light: #1a1a2e;
+            --dark: #f8f9fa;
+            --darker: #121212;
+            --card-bg: rgba(26, 26, 46, 0.9);
+            --text-light: #212529;
+            --text-dark: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            margin: 0;
+            padding: 0;
+            transition: var(--transition);
+        }
+
+        .dark-mode body {
+            background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .dark-mode .container {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: var(--card-bg);
+            transform: skewY(-4deg);
+            z-index: 1;
+            transition: var(--transition);
+        }
+        
+        .profile-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-weight: 300;
+            margin: 10px 0 20px;
+            opacity: 0.9;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .contact-item i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+        }
+        
+        .content {
+            padding: 60px 40px 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            color: var(--accent);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            background: rgba(67, 97, 238, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .dark-mode .about-text {
+            background: rgba(67, 97, 238, 0.1);
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 3px solid var(--accent);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateX(5px);
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--card-bg);
+        }
+        
+        .date {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+        }
+        
+        .company, .school {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .company i, .school i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .position, .degree {
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .experience-details {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        
+        .experience-details li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .experience-details li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+        }
+
+        .dark-mode .skill-category {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(67, 97, 238, 0.2);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+        }
+
+        .dark-mode .skill-category:hover {
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.25);
+        }
+        
+        .skill-category h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .skill-category h4 i {
+            margin-right: 12px;
+            font-size: 1.4rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .skill-category li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(67, 97, 238, 0.2);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .skill-category li:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-category li i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+            transition: width 1.5s ease;
+        }
+        
+        .activities {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+            transition: var(--transition);
+        }
+
+        .dark-mode .activities {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(67, 97, 238, 0.2);
+        }
+
+        .activities:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+        }
+
+        .dark-mode .activities:hover {
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.25);
+        }
+        
+        .activities p {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.05rem;
+        }
+        
+        .activities p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .activities p::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .social-media a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        .whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .content {
+                padding: 50px 20px 30px;
+            }
+            
+            .skill-category {
+                min-width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="header">
+            <div class="profile-container floating">
+                <!-- Placeholder for profile image - replace with actual image -->
+                <img src="abidin.jpg" class="profile-img" alt="Foto Profil">
+                <h1>Mhd. Abidin Abbas Lubis</h1>
+                <div class="title">Siswa Rekayasa Perangkat Lunak</div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Medan, Sumatera Utara</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 896-7777-6471</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>abidlubis95@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section" id="about">
+                <div class="section-title">
+                    <i class="fas fa-user-astronaut"></i>
+                    Tentang Saya
+                </div>
+                <div class="about-text">
+                    Saya adalah siswa Rekayasa Perangkat Lunak (RPL) di SMK Multi Karya, Medan dengan minat kuat dalam pengembangan web dan desain. Saya memiliki dasar yang kuat dalam pengembangan perangkat lunak dan antusias untuk menerapkan keterampilan saya di lingkungan profesional. Saat ini saya sedang mencari kesempatan Praktik Kerja Lapangan (PKL) kedua di PT. Rezeki Teknologi Indonesia untuk mengembangkan kemampuan teknis saya dan mendapatkan pengalaman industri yang berharga.
+                </div>
+            </div>
+            
+            <div class="section" id="experience">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Pengalaman Kerja
+                </div>
+                <div class="experience-item">
+                    <div class="date">Jan 2025 - Apr 2025</div>
+                    <div class="company"><i class="fas fa-building"></i> PT. Nairamitralogistics Indonesia</div>
+                    <div class="position">Pengembang Wordpress (Front End)</div>
+                    <ul class="experience-details">
+                        <li>Mengembangkan website responsif menggunakan Wordpress dengan Elementor</li>
+                        <li>Membuat tema dan plugin kustom sesuai kebutuhan klien</li>
+                        <li>Mengintegrasikan Google Spreadsheet untuk manajemen data dinamis</li>
+                        <li>Mengkonfigurasi sistem Live Chat untuk interaksi pelanggan</li>
+                        <li>Mengoptimalkan performa website dan SEO</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section" id="education">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Pendidikan
+                </div>
+                <div class="education-item">
+                    <div class="date">2013 - 2019</div>
+                    <div class="school"><i class="fas fa-school"></i> SD Muhammadiyah 06</div>
+                    <div class="degree">Sekolah Dasar</div>
+                    <div class="location">Medan</div>
+                </div>
+                <div class="education-item">
+                    <div class="date">2019 - 2023</div>
+                    <div class="school"><i class="fas fa-school"></i> Pondok Pesantren Tahfidz Qur'an Darul Adib Amplas</div>
+                    <div class="degree">Sekolah Menengah Pertama</div>
+                    <div class="location">Medan</div>
+                </div>
+                <div class="education-item">
+                    <div class="date">2023 - Sekarang</div>
+                    <div class="school"><i class="fas fa-laptop-code"></i> SMK Multi Karya</div>
+                    <div class="degree">Sekolah Menengah Kejuruan - Rekayasa Perangkat Lunak</div>
+                    <div class="location">Medan</div>
+                </div>
+            </div>
+            
+            <div class="section" id="skills">
+                <div class="section-title">
+                    <i class="fas fa-code"></i>
+                    Keahlian
+                </div>
+                <div class="skills-list">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-laptop-code"></i> Pemrograman</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> HTML</li>
+                            <li><i class="fas fa-check"></i> CSS</li>
+                            <li><i class="fas fa-check"></i> Bootstrap</li>
+                            <li><i class="fas fa-check"></i> Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-file-alt"></i> Microsoft Office</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Word</li>
+                            <li><i class="fas fa-check"></i> Excel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-paint-brush"></i> Desain</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Wordpress Elementor</li>
+                            <li><i class="fas fa-check"></i> Figma</li>
+                            <li><i class="fas fa-check"></i> Canva</li>
+                            <li><i class="fas fa-check"></i> Prinsip UI/UX</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="activities">
+                <div class="section-title">
+                    <i class="fas fa-users"></i>
+                    Aktivitas
+                </div>
+                <div class="activities">
+                    <p>Ketua Organisasi Siswa Intra Sekolah (OSIS SMK Multi Karya)</p>
+                    <p>Anggota komunitas WCD (World Cleanup Day) Cleaning Activity</p>
+                    <p>Anggota komunitas CLS (Chinese Language Student)</p>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.instagram.com/diin.ab95/" class="instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/6289677776471" class="whatsapp" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Scroll animation
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animate skill bars
+        const skillBars = document.querySelectorAll('.skill-progress');
+        const skills = [
+            { name: 'html', value: 90 },
+            { name: 'css', value: 85 },
+            { name: 'bootstrap', value: 80 },
+            { name: 'python', value: 70 },
+            { name: 'word', value: 95 },
+            { name: 'excel', value: 85 },
+            { name: 'elementor', value: 88 },
+            { name: 'figma', value: 75 },
+            { name: 'canva', value: 90 },
+            { name: 'uiux', value: 80 }
+        ];
+
+        // Set skill bar widths after a delay
+        setTimeout(() => {
+            skillBars.forEach(bar => {
+                const skillName = bar.parentElement.parentElement.previousElementSibling.textContent.toLowerCase();
+                const skill = skills.find(s => skillName.includes(s.name));
+                if (skill) {
+                    bar.style.width = `${skill.value}%`;
+                }
+            });
+        }, 500);
+    </script>
+</body>
+</html>
